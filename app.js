@@ -1,24 +1,22 @@
 let myLibrary = new Map();
 
-class Book {
-  constructor(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+function Book(title, author, pages, read) {
+  this.title = title
+  this.author = author
+  this.pages = pages
+  this.read = read
 
-    this.read_info = function (read) {
-      if (read == true) {
-        return 'have read';
-      } else {
-        return 'not read yet';
-      }
+  this.read_info = function(read) {
+    if (read == true) {
+        return 'have read'
+    } else {
+        return 'not read yet'
     }
-  }
+  };
 
-  info() {
-      return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read_info(this.read)}`;
-    }
+  this.info = function () {
+    return `${title} by ${author}, ${pages} pages, ${this.read_info(read)}`
+  };
 };
 
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false)
