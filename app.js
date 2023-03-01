@@ -19,6 +19,14 @@ function Book(title, author, pages, read) {
   };
 };
 
-function addBookToLibrary() {
-    // do stuff here
+function addBookToLibrary(newBook) {
+    return myLibrary.push(newBook)
+  }
+
+  function deleteBookToLibrary() {
+    // pass
+  }
+
+  function displayLibrary() {
+    // pass
   }
