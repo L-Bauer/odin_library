@@ -9,7 +9,29 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        
+      <h1>Personal Library</h1>
+      <p>
+        Track all of the books in your house. Time to make use of all the books
+        decorating those book shelves.
+      </p>
+       <fieldset id="submit_book">
+        <legend>Submit a Book</legend>
+          <form>
+            <label for="book_title">Book's Title:</label>
+            <input type="text" id="book_title" placeholder="Enter book's Title" required>
+          
+            <label for="book_author">Book's Author:</label>
+            <input type="text" id="book_author" placeholder="Enter book's Author" required>
+
+            <label for="page_numbers">Number of Pages</label>
+            <input type="number" id="page_numbers" required>
+
+            <label for="have_read">Have you read this book?</label>
+            <input type="checkbox" id="have_read">
+
+            <button type="submit">Submit</button>
+          </form>
+       </fieldset> 
         
         <script src="app.js" async defer></script>
     </body>
