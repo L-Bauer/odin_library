@@ -58,13 +58,17 @@ function submitBook(e) {
 };
 
 function displayLibrary() {
-  var table = document.getElementById("datas");
+  var table = document.getElementById("library_body");
   table.innerHTML="";
   var tr="";
-  myLibrary.forEach(book=>{
+  myLibrary.forEach((book, index)=>{
      tr+='<tr>';
-     tr+='<td>'+book.title+'</td>'+'<td>'+book.author+'</td>'+'<td>'+book.pages+'</td>'+'<td>'+book.read_info(book.read)+'</td>'
+     tr+='<td>'+book.title+'</td>'+
+     '<td>'+book.author+'</td>'+
+     '<td>'+book.pages+'</td>'+
+     '<td>'+book.read_info(book.read)+'</td>'+'<td>'+`<button class="btn delete" id=${index}><strong>Delete</strong></button>`+'</td>'
      tr+='</tr>'
+     console.log([index])
   })
   table.innerHTML+=tr;
 }
