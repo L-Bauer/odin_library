@@ -17,8 +17,9 @@
       <div class="openBtn">
         <button class="openButton"><strong>Open Form</strong></button>
       </div>
-       <fieldset id="submit_book">
-        <legend>Submit a Book</legend>
+      <div class="addNewPopup">
+        <fieldset class="formPopup" id="popupForm">
+          <legend>Submit a Book</legend>
           <form>
             <label for="book_title">Book's Title:</label>
             <input type="text" id="book_title" placeholder="Enter book's Title" required>
@@ -34,7 +35,8 @@
 
             <button type="submit">Submit</button>
           </form>
-       </fieldset>
+        </fieldset>
+      </div>
        <table id="library_list">
           <thead>
             <th>Book Title</th>

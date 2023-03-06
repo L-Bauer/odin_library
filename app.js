@@ -36,7 +36,7 @@ function deleteBookToLibrary() {
 
 function openForm() {
   console.log("Hello");
-  // document.getElementById("popupForm").style.display = "block";
+  document.getElementById("popupForm").style.display = "block";
 }
 
 function displayLibrary() {
