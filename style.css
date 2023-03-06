@@ -24,7 +24,7 @@
 
 .btn {
   background-color: limegreen;
-  border-radius: 1em;
+  border-radius: .8rem;
 }
 
 .cancel {
@@ -34,4 +34,10 @@
 .btn:hover {
   opacity: 1;
   background-color: yellow;
+}
+
+.delete {
+  background-color: red;
+  color: white;
+  border-radius: .2rem;
 }
