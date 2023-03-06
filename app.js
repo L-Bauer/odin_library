@@ -34,8 +34,11 @@ function deleteBookToLibrary() {
   // pass
 }
 
-// https://stackoverflow.com/questions/72527457/how-to-create-an-html-table-from-an-array-of-objects
-// https://stackoverflow.com/questions/61497993/how-to-insert-array-values-into-a-html-table-with-javascript
+function openForm() {
+  console.log("Hello");
+  // document.getElementById("popupForm").style.display = "block";
+}
+
 function displayLibrary() {
   var table = document.getElementById("datas");
   table.innerHTML="";
@@ -53,5 +56,7 @@ addBookToLibrary(greatGatsby);
 addBookToLibrary(warAndPeace);
 addBookToLibrary(mobyDick);
 
+displayLibrary(myLibrary);
 
-displayLibrary(myLibrary)
+const open_popup = document.querySelector('.openButton');
+open_popup.addEventListener('click', openForm);
