@@ -1,4 +1,6 @@
-
+* {
+  display: grid;
+}
 
 .addNewPopup {
   position: relative;
