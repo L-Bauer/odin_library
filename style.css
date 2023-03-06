@@ -21,3 +21,17 @@
   padding: 20px;
   background-color: #fff;
 }
+
+.btn {
+  background-color: limegreen;
+  border-radius: 1em;
+}
+
+.cancel {
+  background-color: orange;
+}
+
+.btn:hover {
+  opacity: 1;
+  background-color: yellow;
+}

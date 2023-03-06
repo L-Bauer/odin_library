@@ -42,6 +42,15 @@ function closeForm() {
   document.getElementById("popupForm").style.display = "none";
 }
 
+function submitBook(e) {
+  e.preventDefault();
+  const formData = new FormData(submit_Book)
+  let newBookInfo = []
+  for (const info of formData.values()) {
+    newBookInfo.push(info)
+  }
+};
+
 function displayLibrary() {
   var table = document.getElementById("datas");
   table.innerHTML="";
@@ -61,8 +70,19 @@ addBookToLibrary(mobyDick);
 
 displayLibrary(myLibrary);
 
-const open_popup = document.querySelector('.openButton');
-const close_popup = document.querySelector('.cancel');
+const open_Popup = document.querySelector('.open');
+const close_Popup = document.querySelector('.cancel');
+const submit_Book = document.querySelector('#newBook');
 
-open_popup.addEventListener('click', openForm);
-close_popup.addEventListener('click', closeForm);
+open_Popup.addEventListener('click', openForm);
+close_Popup.addEventListener('click', closeForm);
+
+submit_Book.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const formData = new FormData(submit_Book)
+  let newBookInfo = []
+  for (const info of formData.values()) {
+    newBookInfo.push(info)
+  }
+  console.log(newBookInfo)
+})
