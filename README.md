@@ -10,4 +10,7 @@ Enter information on a book (author, title, pages, and if you have read the book
 
 ## Resources and Links
 
-Link to odin lesson: [Project: Library](https://www.theodinproject.com/lessons/node-path-javascript-library)
+- Link to odin lesson: [Project: Library](https://www.theodinproject.com/lessons/node-path-javascript-library)
+- Links to create a table from an array using Javascript:
+  - [HTML table from array of objects](https://stackoverflow.com/questions/72527457/how-to-create-an-html-table-from-an-array-of-objects)
+  - [Insert array values into HTML table with javascript](https://stackoverflow.com/questions/61497993/how-to-insert-array-values-into-a-html-table-with-javascript)
