@@ -15,3 +15,9 @@
   border: 3px solid #999999;
   z-index: 9;
 }
+
+.formContainer {
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+}

@@ -35,8 +35,11 @@ function deleteBookToLibrary() {
 }
 
 function openForm() {
-  console.log("Hello");
   document.getElementById("popupForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("popupForm").style.display = "none";
 }
 
 function displayLibrary() {
@@ -59,4 +62,7 @@ addBookToLibrary(mobyDick);
 displayLibrary(myLibrary);
 
 const open_popup = document.querySelector('.openButton');
+const close_popup = document.querySelector('.cancel');
+
 open_popup.addEventListener('click', openForm);
+close_popup.addEventListener('click', closeForm);
