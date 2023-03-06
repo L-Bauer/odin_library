@@ -15,3 +15,4 @@ Enter information on a book (author, title, pages, and if you have read the book
   - [HTML table from array of objects](https://stackoverflow.com/questions/72527457/how-to-create-an-html-table-from-an-array-of-objects)
   - [Insert array values into HTML table with javascript](https://stackoverflow.com/questions/61497993/how-to-insert-array-values-into-a-html-table-with-javascript)
 - Link to create a button to bring up a popup or form: [Create a popup](https://www.w3docs.com/snippets/javascript/how-to-create-a-popup-form-using-javascript.html)
+- Link to GIT flow: [GIT FLOW](https://nvie.com/posts/a-successful-git-branching-model/)
