@@ -40,6 +40,7 @@ function openForm() {
 
 function closeForm() {
   document.getElementById("popupForm").style.display = "none";
+  submit_Book.reset();
 }
 
 function submitBook(e) {
@@ -49,6 +50,11 @@ function submitBook(e) {
   for (const info of formData.values()) {
     newBookInfo.push(info)
   }
+  const submitedBook = new Book(newBookInfo[0], newBookInfo[1], newBookInfo[2], newBookInfo[3]);
+  addBookToLibrary(submitedBook);
+  displayLibrary();
+  submit_Book.reset();
+  closeForm();
 };
 
 function displayLibrary() {
@@ -76,13 +82,4 @@ const submit_Book = document.querySelector('#newBook');
 
 open_Popup.addEventListener('click', openForm);
 close_Popup.addEventListener('click', closeForm);
-
-submit_Book.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const formData = new FormData(submit_Book)
-  let newBookInfo = []
-  for (const info of formData.values()) {
-    newBookInfo.push(info)
-  }
-  console.log(newBookInfo)
-})
+submit_Book.addEventListener('submit', (e) => {submitBook(e)});
