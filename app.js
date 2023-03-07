@@ -30,9 +30,10 @@ function addBookToLibrary(newBook) {
     return myLibrary.push(newBook)
 }
 
-function deleteBookToLibrary() {
-  // pass
-}
+function deleteBookToLibrary(book_number) {
+  myLibrary.splice(book_number, 1);
+  displayLibrary();
+ }
 
 function openForm() {
   document.getElementById("popupForm").style.display = "block";
@@ -50,7 +51,7 @@ function submitBook(e) {
   for (const info of formData.values()) {
     newBookInfo.push(info)
   }
-  const submitedBook = new Book(newBookInfo[0], newBookInfo[1], newBookInfo[2], newBookInfo[3]);
+  const submitedBook = new Book(newBookInfo[0], newBookInfo[1], newBookInfo[2], Number(newBookInfo[3]));
   addBookToLibrary(submitedBook);
   displayLibrary();
   submit_Book.reset();
@@ -62,15 +63,20 @@ function displayLibrary() {
   table.innerHTML="";
   var tr="";
   myLibrary.forEach((book, index)=>{
-     tr+='<tr>';
+     tr+=`<tr class="row book" id=${index}>`;
      tr+='<td>'+book.title+'</td>'+
      '<td>'+book.author+'</td>'+
      '<td>'+book.pages+'</td>'+
-     '<td>'+book.read_info(book.read)+'</td>'+'<td>'+`<button class="btn delete" id=${index}><strong>Delete</strong></button>`+'</td>'
+     '<td>'+book.read_info(book.read)+'</td>'+
+     '<td>'+`<button class="btn delete" id=${index}><strong>Delete</strong></button>`+'</td>'
      tr+='</tr>'
-     console.log([index])
   })
   table.innerHTML+=tr;
+
+  let delete_Book = document.querySelectorAll('.delete');
+  delete_Book.forEach((row, index) => {
+    row.addEventListener('click', () => deleteBookToLibrary(index));
+  });
 }
 
 addBookToLibrary(theHobbit);
@@ -83,6 +89,7 @@ displayLibrary(myLibrary);
 const open_Popup = document.querySelector('.open');
 const close_Popup = document.querySelector('.cancel');
 const submit_Book = document.querySelector('#newBook');
+
 
 open_Popup.addEventListener('click', openForm);
 close_Popup.addEventListener('click', closeForm);
