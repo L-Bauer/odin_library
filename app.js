@@ -63,13 +63,18 @@ function displayLibrary() {
   table.innerHTML="";
   var tr="";
   myLibrary.forEach((book, index)=>{
-     tr+=`<tr class="row book" id=${index}>`;
-     tr+='<td>'+book.title+'</td>'+
-     '<td>'+book.author+'</td>'+
-     '<td>'+book.pages+'</td>'+
-     '<td>'+book.read_info(book.read)+'</td>'+
-     '<td>'+`<button class="btn delete" id=${index}><strong>Delete</strong></button>`+'</td>'
-     tr+='</tr>'
+    tr+=`<tr class="row book" id=${index}>`;
+    tr+='<td>'+book.title+'</td>'+
+    '<td>'+book.author+'</td>'+
+    '<td>'+book.pages+'</td>'+
+    '<td>'+book.read_info(book.read)+
+      '<label class="switch">'+
+        '<input  type="checkbox">'+
+        `<span class="slider round" id=${index}>`+'</span>'+
+      '</label>'+
+    '</td>'+
+    '<td>'+`<button class="btn delete" id=${index}><strong>Delete</strong></button>`+'</td>'
+    tr+='</tr>'
   })
   table.innerHTML+=tr;
 
