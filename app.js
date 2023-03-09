@@ -58,6 +58,16 @@ function submitBook(e) {
   closeForm();
 };
 
+function toggleCheck () {
+  myLibrary.forEach((book, index)=>{
+    if (book.read) {
+      console.log(book.read);
+      console.log(`book_read_${index}`);
+      document.getElementById(`book_read_${index}`).checked = true;
+    }
+  })
+}
+
 function displayLibrary() {
   var table = document.getElementById("library_body");
   table.innerHTML="";
@@ -69,7 +79,7 @@ function displayLibrary() {
     '<td>'+book.pages+'</td>'+
     '<td>'+book.read_info(book.read)+
       '<label class="switch">'+
-        '<input  type="checkbox">'+
+        `<input type="checkbox" class="check read" id="book_read_${index}">`+
         `<span class="slider round" id=${index}>`+'</span>'+
       '</label>'+
     '</td>'+
@@ -77,11 +87,17 @@ function displayLibrary() {
     tr+='</tr>'
   })
   table.innerHTML+=tr;
+  toggleCheck();
+  placeEventListener();
+}
 
-  let delete_Book = document.querySelectorAll('.delete');
-  delete_Book.forEach((row, index) => {
-    row.addEventListener('click', () => deleteBookToLibrary(index));
-  });
+function clickCheck (book_number) {
+  if (myLibrary[book_number].read) {
+    myLibrary[book_number].read = 0;
+  } else {
+    myLibrary[book_number].read = 1;
+  }
+  displayLibrary();
 }
 
 addBookToLibrary(theHobbit);
@@ -99,3 +115,16 @@ const submit_Book = document.querySelector('#newBook');
 open_Popup.addEventListener('click', openForm);
 close_Popup.addEventListener('click', closeForm);
 submit_Book.addEventListener('submit', (e) => {submitBook(e)});
+
+function placeEventListener () {
+  let delete_Book = document.querySelectorAll('.delete');
+  delete_Book.forEach((row, index) => {
+  row.addEventListener('click', () => deleteBookToLibrary(index));
+  });
+
+  let read_book = document.querySelectorAll('.read');
+  read_book.forEach((row, index) => {
+  row.addEventListener('click', () => clickCheck(index));
+  })
+}
+
